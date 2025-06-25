@@ -11,7 +11,6 @@ export async function createUser(user: any) {
     await connect();
     const userData = {
       ...user,
-      credits: user.credits ?? 20,
     };
     const newUser = await User.create(userData);
     return JSON.parse(JSON.stringify(newUser));

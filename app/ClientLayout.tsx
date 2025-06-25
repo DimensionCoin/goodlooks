@@ -19,27 +19,26 @@ export default function ClientLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  return (
-    <ClerkProvider>
-      <html lang="en" suppressHydrationWarning>
-        <body className={inter.className}>
+    return (
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        {/* ClerkProvider now truly wraps your whole App */}
+        <ClerkProvider>
           <ThemeProvider
             attribute="class"
             defaultTheme="light"
             enableSystem={false}
             disableTransitionOnChange
           >
-            {/* Set defaultTheme to "light" */}
             <Header />
             <main>{children}</main>
             <Footer />
           </ThemeProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+        </ClerkProvider>
+      </body>
+    </html>
   );
 }
-
 const Footer = () => {
   return (
     <motion.footer
