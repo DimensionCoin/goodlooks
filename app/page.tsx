@@ -9,7 +9,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <ServicesSection />
-      <GallerySection /> {/* Add the GallerySection here */}
+      <GallerySection /> 
       <AboutUsSection />
       <SubscriptionPlansSection />
     </>
