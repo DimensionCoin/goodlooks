@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth; /* This enables smooth scrolling for anchor links */
+  }
+
+  :root {
+    /* "Not-So-White" Light Theme - Default */
+    --background: 45 30% 96%; /* Pale Warm Off-White/Cream: #f9f7f2 */
+    --foreground: 215 25% 27%; /* Dark Slate Gray Text: #36414f */
+
+    --card: 0 0% 100%; /* Clean White for Cards */
+    --card-foreground: 215 25% 27%;
+
+    /* Glassmorphism for light theme - very subtle */
+    --glass-card-bg: 0 0% 100% / 0.7; /* Semi-transparent white */
+    --glass-card-border: 215 25% 27% / 0.1; /* Faint dark border */
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+
+    --primary: 140 58% 42%; /* Professional Green: #329b50 */
+    --primary-foreground: 0 0% 100%; /* White text on green */
+
+    --secondary: 210 20% 94%; /* Light Grayish Blue: #eaf0f5 */
+    --secondary-foreground: 215 20% 40%; /* Medium Slate Gray */
+
+    --muted: 210 20% 90%; /* Slightly darker light gray: #dde3e9 */
+    --muted-foreground: 215 15% 50%; /* Softer Gray Text: #727c8a */
+
+    --accent: 135 60% 50%; /* Brighter, slightly more vibrant Green: #33cc4d */
+    --accent-foreground: 0 0% 100%; /* White text on accent green */
+
+    --destructive: 0 72% 51%; /* Standard Red */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 85%; /* Light Gray Border: #cbd3db */
+    --input: 210 20% 92%; /* Very Light Gray Input BG: #e5eaf0 */
+    --ring: 140 58% 48%; /* Focus Ring - slightly brighter primary green */
+    --radius: 0.5rem;
+
+    /* For tailwind.config.ts mapping */
+    --brand-green: 140 58% 42%;
+    --brand-dark: 215 25% 27%; /* Main text color in light theme */
+    --brand-light: 45 30% 96%; /* Main background in light theme */
+    --brand-card: 0 0% 100%;
+    --brand-accent: 135 60% 50%;
+    --brand-accent-foreground: 0 0% 100%;
+  }
+
+  .dark {
+    /* Refined Dark Theme (Kept for potential toggle) */
+    --background: 215 25% 18%;
+    --foreground: 210 15% 90%;
+    --card: 215 25% 22%;
+    --card-foreground: 210 15% 90%;
+    --glass-card-bg: 215 25% 25% / 0.6;
+    --glass-card-border: 210 15% 90% / 0.1;
+    --popover: 215 25% 15%;
+    --popover-foreground: 210 15% 90%;
+    --primary: 140 55% 50%;
+    --primary-foreground: 210 15% 98%;
+    --secondary: 215 20% 30%;
+    --secondary-foreground: 210 15% 85%;
+    --muted: 215 20% 25%;
+    --muted-foreground: 210 10% 65%;
+    --accent: 40 75% 55%;
+    --accent-foreground: 215 25% 10%;
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 215 20% 28%;
+    --input: 215 20% 22%;
+    --ring: 140 55% 55%;
+
+    --brand-green: 140 55% 50%;
+    --brand-dark: 215 25% 18%;
+    --brand-light: 210 15% 90%;
+    --brand-card: 215 25% 22%;
+    --brand-accent: 40 75% 55%;
+    --brand-accent-foreground: 215 25% 10%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Scrollbar for light theme (optional, can be styled differently or removed) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted) / 0.5); /* Using muted from the current theme */
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.7); /* Using primary from the current theme */
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+/* Helper class for glassmorphism - will adapt based on theme */
+.glass-effect {
+  @apply backdrop-blur-md border shadow-lg rounded-xl;
+  background-color: hsl(var(--glass-card-bg));
+  border-color: hsl(var(--glass-card-border));
+}
