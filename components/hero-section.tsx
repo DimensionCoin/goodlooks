@@ -33,7 +33,7 @@ export default function HeroSection() {
     >
       <motion.div style={{ y: imageY }} className="absolute inset-0 z-0">
         <Image
-          src="/placeholder.svg?width=1920&height=1080"
+          src="/grasshero.png"
           alt="Serene landscaped garden at dawn"
           layout="fill"
           objectFit="cover"
@@ -41,7 +41,7 @@ export default function HeroSection() {
           priority
         />
         {/* Overlay for better text contrast and mood */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/50 to-background"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background-10 via-background/40 to-background"></div>
       </motion.div>
 
       <motion.div
