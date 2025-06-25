@@ -41,7 +41,7 @@ export default function HeroSection() {
           priority
         />
         {/* Overlay for better text contrast and mood */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background-10 via-background/40 to-background"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background-5 via-background/40 to-background"></div>
       </motion.div>
 
       <motion.div
